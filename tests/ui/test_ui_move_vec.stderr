@@ -1,0 +1,16 @@
+error[E0382]: borrow of moved value: `vec`
+  --> tests/ui/test_ui_move_vec.rs:11:9
+   |
+4  |         let vec = Vec::<u8>::from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+   |             --- move occurs because `vec` has type `Vec<u8>`, which does not implement the `Copy` trait
+5  |         let mut mut_slice = MutSlice::vec_into(vec);
+   |                                                --- value moved here
+...
+11 |         assert_eq!(vec, vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ value borrowed here after move
+   |
+   = note: this error originates in the macro `assert_eq` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+   |
+5  |         let mut mut_slice = MutSlice::vec_into(vec.clone());
+   |                                                   ++++++++

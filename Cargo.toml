@@ -1,0 +1,15 @@
+[package]
+name = "mutslices"
+version = "0.1.0"
+edition = "2021"
+authors = ["Karl Wulfert <pic16f877.ccs@emailn.de>"]
+readme = "README.md"
+repository = "https://github.com/pic16f877ccs/mutslices"
+homepage = "https://github.com/pic16f877ccs/mutslices"
+license = "MIT"
+keywords = ["mut-slices", "slice"]
+categories = ["rust-patterns", "data-structures"]
+description = "Provides the ability to create many mutable slices of a vector."
+
+[dev-dependencies]
+trybuild = "1.0.83"
