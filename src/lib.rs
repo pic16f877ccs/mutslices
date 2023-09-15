@@ -27,6 +27,7 @@
 //! let vec_from_slice = mut_slice.into_vec();
 //! assert_eq!(vec_from_slice, vec![77, 6, 9, 12, 15, 11, 12, 13, 14, 15, 6, 78, 9, 8, 10]);
 //! ```
+#[doc = include_str!("../README.md")]
 use std::mem::forget;
 use std::slice::from_raw_parts_mut;
 
